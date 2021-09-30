@@ -331,8 +331,7 @@ end
 -- If it returns a value, that will replace the current node.
 function Doc:maptags(callback)
     local is_tag = _M.is_tag
-    local i = 1;
-    while i <= #self do
+    for i = 1, #self do
         if is_tag(self[i]) then
             local ret = callback(self[i]);
             if ret == nil then
